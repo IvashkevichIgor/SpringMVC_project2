@@ -3,10 +3,12 @@ package ru.ivashkevich.springProject1.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 import ru.ivashkevich.springProject1.dao.PersonDAO;
+import ru.ivashkevich.springProject1.model.Person;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/people")
@@ -30,5 +32,20 @@ public class PersonController {
         model.addAttribute("person", personDAO.getPersonById(id));
 
         return "people/person";
+    }
+
+    @GetMapping("/new")
+    public String newPerson(Model model){
+        model.addAttribute("person", new Person());
+        return "people/new";
+    }
+
+    @PostMapping
+    public String add(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult){
+        if (bindingResult.hasErrors())
+            return "people/new";
+
+        personDAO.save(person);
+        return "redirect:/people";
     }
 }
