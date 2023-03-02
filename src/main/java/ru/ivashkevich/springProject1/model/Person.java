@@ -4,17 +4,17 @@ import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class Person {
 
     private int id;
-    @NotEmpty(message = "Name should not be empty")
+    @NotEmpty(message = "Имя не должно быть пустым")
     private String name;
 
-    @NotEmpty(message = "Год рождения не должен быть пустым")
-    //TODO перевести сообщения ошибок на русский
-    @Min(value = 1900, message = "Year of birth should be more than 1900")
+    @NotNull(message = "Год рождения не должен быть пустым")
+    @Min(value = 1900, message = "Год рождения должен быть больше чем 1900")
     private int birthYear;
 
     private List<Book> books;
