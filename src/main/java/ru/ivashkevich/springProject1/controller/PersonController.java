@@ -40,8 +40,14 @@ public class PersonController {
         return "people/new";
     }
 
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id){
+        model.addAttribute("person", personDAO.getPersonById(id));
+        return "people/edit";
+    }
+
     @PostMapping
-    public String add(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult){
+    public String create(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult){
         if (bindingResult.hasErrors())
             return "people/new";
 
