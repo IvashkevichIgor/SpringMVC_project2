@@ -1,15 +1,12 @@
 package ru.ivashkevich.springProject1.model;
 
-import org.springframework.stereotype.Component;
-
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class Person {
 
-    private int id;
+    private int personId;
     @NotEmpty(message = "Имя не должно быть пустым")
     private String name;
 
@@ -20,19 +17,19 @@ public class Person {
 
     public Person(){}
 
-    public Person(int id, String name, int birthYear, List<Book> books) {
-        this.id = id;
+    public Person(int personId, String name, int birthYear, List<Book> books) {
+        this.personId = personId;
         this.name = name;
         this.birthYear = birthYear;
         this.books = books;
     }
 
-    public int getId() {
-        return id;
+    public int getPersonId() {
+        return personId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPersonId(int personId) {
+        this.personId = personId;
     }
 
     public String getName() {
