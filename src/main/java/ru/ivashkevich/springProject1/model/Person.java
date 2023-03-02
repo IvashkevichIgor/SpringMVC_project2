@@ -13,7 +13,6 @@ public class Person {
     @NotEmpty(message = "Имя не должно быть пустым")
     private String name;
 
-    @NotNull(message = "Год рождения не должен быть пустым")
     @Min(value = 1900, message = "Год рождения должен быть больше чем 1900")
     private int birthYear;
 
