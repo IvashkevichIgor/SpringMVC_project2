@@ -8,7 +8,6 @@ import ru.ivashkevich.springProject1.model.Book;
 import ru.ivashkevich.springProject1.model.Person;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class PersonDAO {
@@ -25,12 +24,12 @@ public class PersonDAO {
     }
 
     public Person getPersonById(int id){
-        return jdbcTemplate.query("SELECT * FROM person WHERE person_id=?", new BeanPropertyRowMapper<>(Person.class), id)
+        Person person = jdbcTemplate.query("SELECT * FROM person WHERE person_id=?", new BeanPropertyRowMapper<>(Person.class), id)
                 .stream().findAny().orElse(null);
-    }
+        if (person != null)
+            person.setBooks(getPersonBookList(id));
 
-    public List<Book> getPersonBookList(int id){
-        return jdbcTemplate.query("SELECT * FROM book WHERE person_id=?", new BeanPropertyRowMapper<>(Book.class), id);
+        return person;
     }
 
     public void save(Person person){
@@ -44,5 +43,9 @@ public class PersonDAO {
 
     public void delete(int id){
         jdbcTemplate.update("DELETE FROM person WHERE person_id=?", id);
+    }
+
+    private List<Book> getPersonBookList(int id){
+        return jdbcTemplate.query("SELECT * FROM book WHERE person_id=?", new BeanPropertyRowMapper<>(Book.class), id);
     }
 }
