@@ -1,7 +1,7 @@
 package ru.ivashkevich.springProject1.model;
 
 public class Book {
-    private int id;
+    private int bookId;
     private Person owner;
     private String title;
     private String author;
@@ -9,20 +9,20 @@ public class Book {
 
     public Book(){}
 
-    public Book(int id, Person owner, String title, String author, int publicationYear) {
-        this.id = id;
+    public Book(int bookId, Person owner, String title, String author, int publicationYear) {
+        this.bookId = bookId;
         this.owner = owner;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
     }
 
-    public int getId() {
-        return id;
+    public int getBookId() {
+        return bookId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
     }
 
     public Person getOwner() {
@@ -55,5 +55,16 @@ public class Book {
 
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookId=" + bookId +
+                ", owner=" + owner +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", publicationYear=" + publicationYear +
+                '}';
     }
 }
