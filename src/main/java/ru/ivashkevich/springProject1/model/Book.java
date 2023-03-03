@@ -1,9 +1,13 @@
 package ru.ivashkevich.springProject1.model;
 
+import javax.validation.constraints.NotEmpty;
+
 public class Book {
     private int bookId;
     private Person owner;
+    @NotEmpty(message = "Название книги не должно быть пустым")
     private String title;
+    @NotEmpty(message = "Имя автора не должно быть пустым")
     private String author;
     private int publicationYear;
 

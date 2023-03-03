@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import ru.ivashkevich.springProject1.mapper.BookRowMapper;
 import ru.ivashkevich.springProject1.model.Book;
+import ru.ivashkevich.springProject1.model.Person;
 
 import java.util.List;
 
@@ -21,25 +23,22 @@ public class BookDAO {
         return jdbcTemplate.query("SELECT * FROM book", new BeanPropertyRowMapper<>(Book.class));
     }
 
-    /*public Person getPersonById(int id){
-        return jdbcTemplate.query("SELECT * FROM person WHERE person_id=?", new BeanPropertyRowMapper<>(Person.class), id)
+    public Book getBookById(int id){
+        return jdbcTemplate.query("SELECT * FROM person JOIN book USING (person_id) WHERE book_id=?", new BookRowMapper(), id)
                 .stream().findAny().orElse(null);
     }
 
-    public List<Book> getPersonBookList(int id){
-        return jdbcTemplate.query("SELECT * FROM book WHERE person_id=?", new BeanPropertyRowMapper<>(Book.class), id);
+    public void save(Book book){
+        jdbcTemplate.update("INSERT INTO book(title, author, publication_year) VALUES (?, ?, ?)",
+                book.getTitle(), book.getAuthor(), book.getPublicationYear());
     }
 
-    public void save(Person person){
-        jdbcTemplate.update("INSERT INTO person(name, birth_year) VALUES (?, ?)", person.getName(), person.getBirthYear());
-    }
-
-    public void update(int id, Person updatedPerson){
+    /*public void update(int id, Person updatedPerson){
         jdbcTemplate.update("UPDATE person SET name=?, birth_year=? WHERE person_id=?",
                 updatedPerson.getName(), updatedPerson.getBirthYear(), id);
-    }
+    }*/
 
     public void delete(int id){
-        jdbcTemplate.update("DELETE FROM person WHERE person_id=?", id);
-    }*/
+        jdbcTemplate.update("DELETE FROM book WHERE book_id=?", id);
+    }
 }
