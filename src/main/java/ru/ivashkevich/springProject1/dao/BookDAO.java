@@ -33,10 +33,10 @@ public class BookDAO {
                 book.getTitle(), book.getAuthor(), book.getPublicationYear());
     }
 
-    /*public void update(int id, Person updatedPerson){
-        jdbcTemplate.update("UPDATE person SET name=?, birth_year=? WHERE person_id=?",
-                updatedPerson.getName(), updatedPerson.getBirthYear(), id);
-    }*/
+    public void update(int id, Book updatedBook){
+        jdbcTemplate.update("UPDATE book SET title=?, author=?, publication_year=? WHERE book_id=?",
+                updatedBook.getTitle(), updatedBook.getAuthor(), updatedBook.getPublicationYear(), id);
+    }
 
     public void delete(int id){
         jdbcTemplate.update("DELETE FROM book WHERE book_id=?", id);

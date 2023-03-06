@@ -7,7 +7,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.ivashkevich.springProject1.dao.BookDAO;
 import ru.ivashkevich.springProject1.model.Book;
-import ru.ivashkevich.springProject1.model.Person;
 
 import javax.validation.Valid;
 
@@ -48,6 +47,26 @@ public class BookController {
             return "books/new";
 
         bookDAO.save(book);
+        return "redirect:/books";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id){
+        model.addAttribute("book", bookDAO.getBookById(id));
+        return "books/edit";
+    }
+
+    @PatchMapping("/{id}")
+    public String update(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult, @PathVariable("id") int id){
+        if(bindingResult.hasErrors())
+            return "books/edit";
+        bookDAO.update(id, book);
+        return "redirect:/books";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id){
+        bookDAO.delete(id);
         return "redirect:/books";
     }
 }
