@@ -29,8 +29,8 @@ public class PersonController {
 
     @GetMapping("/{id}")
     public String showPerson(@PathVariable int id, Model model){
-        Person person = personDAO.getPersonById(id);
-        model.addAttribute("person", person);
+        model.addAttribute("person", personDAO.getPersonById(id));
+        model.addAttribute("books", personDAO.getPersonBookList(id));
 
         return "people/person";
     }
@@ -52,7 +52,7 @@ public class PersonController {
         if (bindingResult.hasErrors())
             return "people/new";
 
-        personDAO.save(person);
+        personDAO.create(person);
         return "redirect:/people";
     }
 

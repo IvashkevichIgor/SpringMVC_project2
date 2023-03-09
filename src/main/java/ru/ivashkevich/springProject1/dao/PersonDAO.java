@@ -26,13 +26,11 @@ public class PersonDAO {
     public Person getPersonById(int id){
         Person person = jdbcTemplate.query("SELECT * FROM person WHERE person_id=?", new BeanPropertyRowMapper<>(Person.class), id)
                 .stream().findAny().orElse(null);
-        if (person != null)
-            person.setBooks(getPersonBookList(id));
 
         return person;
     }
 
-    public void save(Person person){
+    public void create(Person person){
         jdbcTemplate.update("INSERT INTO person(name, birth_year) VALUES (?, ?)", person.getName(), person.getBirthYear());
     }
 
@@ -45,7 +43,7 @@ public class PersonDAO {
         jdbcTemplate.update("DELETE FROM person WHERE person_id=?", id);
     }
 
-    private List<Book> getPersonBookList(int id){
+    public List<Book> getPersonBookList(int id){
         return jdbcTemplate.query("SELECT * FROM book WHERE person_id=?", new BeanPropertyRowMapper<>(Book.class), id);
     }
 }

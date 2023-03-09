@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 
 public class Person {
 
-    private int id;
+    private int personId;
     @NotEmpty(message = "Имя не должно быть пустым")
     @Size(min = 5, max = 100, message = "Длина ФИО должна быть не менее 5 символов и не более 100")
     private String name;
@@ -16,17 +16,17 @@ public class Person {
     public Person(){}
 
     public Person(int personId, String name, int birthYear) {
-        this.id = personId;
+        this.personId = personId;
         this.name = name;
         this.birthYear = birthYear;
     }
 
     public int getPersonId() {
-        return id;
+        return personId;
     }
 
     public void setPersonId(int personId) {
-        this.id = personId;
+        this.personId = personId;
     }
 
     public String getName() {
@@ -48,7 +48,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "personId=" + id +
+                "personId=" + personId +
                 ", name='" + name + '\'' +
                 ", birthYear=" + birthYear +
                 '}';
