@@ -3,9 +3,8 @@ package ru.ivashkevich.springProject1.model;
 import javax.validation.constraints.NotEmpty;
 
 public class Book {
-    private int bookId;
-    private Person owner;
-    @NotEmpty(message = "Название книги не должно быть пустым")
+    private int id;
+    
     private String title;
     @NotEmpty(message = "Имя автора не должно быть пустым")
     private String author;
@@ -13,28 +12,19 @@ public class Book {
 
     public Book(){}
 
-    public Book(int bookId, Person owner, String title, String author, int publicationYear) {
-        this.bookId = bookId;
-        this.owner = owner;
+    public Book(int bookId, String title, String author, int publicationYear) {
+        this.id = bookId;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
     }
 
     public int getBookId() {
-        return bookId;
+        return id;
     }
 
     public void setBookId(int bookId) {
-        this.bookId = bookId;
-    }
-
-    public Person getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Person owner) {
-        this.owner = owner;
+        this.id = bookId;
     }
 
     public String getTitle() {
@@ -64,8 +54,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "bookId=" + bookId +
-                ", owner=" + owner +
+                "bookId=" + id +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", publicationYear=" + publicationYear +

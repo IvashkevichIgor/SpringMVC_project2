@@ -2,34 +2,31 @@ package ru.ivashkevich.springProject1.model;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
-import java.util.List;
+import javax.validation.constraints.Size;
 
 public class Person {
 
-    private int personId;
+    private int id;
     @NotEmpty(message = "Имя не должно быть пустым")
+    @Size(min = 5, max = 100, message = "Длина ФИО должна быть не менее 5 символов и не более 100")
     private String name;
 
     @Min(value = 1900, message = "Год рождения должен быть больше чем 1900")
     private int birthYear;
-
-    private List<Book> books;
-
     public Person(){}
 
-    public Person(int personId, String name, int birthYear, List<Book> books) {
-        this.personId = personId;
+    public Person(int personId, String name, int birthYear) {
+        this.id = personId;
         this.name = name;
         this.birthYear = birthYear;
-        this.books = books;
     }
 
     public int getPersonId() {
-        return personId;
+        return id;
     }
 
     public void setPersonId(int personId) {
-        this.personId = personId;
+        this.id = personId;
     }
 
     public String getName() {
@@ -48,21 +45,12 @@ public class Person {
         this.birthYear = birthYear;
     }
 
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
     @Override
     public String toString() {
         return "Person{" +
-                "personId=" + personId +
+                "personId=" + id +
                 ", name='" + name + '\'' +
                 ", birthYear=" + birthYear +
-                ", books=" + books +
                 '}';
     }
 }
