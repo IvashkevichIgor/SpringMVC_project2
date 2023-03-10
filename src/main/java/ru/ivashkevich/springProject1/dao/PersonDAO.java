@@ -8,6 +8,7 @@ import ru.ivashkevich.springProject1.model.Book;
 import ru.ivashkevich.springProject1.model.Person;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PersonDAO {
@@ -28,6 +29,11 @@ public class PersonDAO {
                 .stream().findAny().orElse(null);
 
         return person;
+    }
+
+    public Optional<Person> getPersonByName(String name){
+        return jdbcTemplate.query("SELECT * FROM person WHERE name=?", new BeanPropertyRowMapper<>(Person.class), name)
+                .stream().findAny();
     }
 
     public void create(Person person){
