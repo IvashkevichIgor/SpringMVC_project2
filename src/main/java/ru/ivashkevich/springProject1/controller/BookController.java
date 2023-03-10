@@ -70,15 +70,15 @@ public class BookController {
         return "redirect:/books";
     }
 
-    @PatchMapping("/{id}/setOwner")
-    public String setOwner(@ModelAttribute("book") Book book, @ModelAttribute("owner") Person person, @PathVariable("id") int id){
+    @PatchMapping("/{id}/assign")
+    public String setOwner(@ModelAttribute("owner") Person person, @PathVariable("id") int id){
         bookDAO.setPersonId(id, person);
 
         return "redirect:/books/{id}";
     }
 
-    @PatchMapping("/{id}/deleteOwner")
-    public String deleteOwner(@ModelAttribute("book") Book book, @PathVariable("id") int id){
+    @PatchMapping("/{id}/release")
+    public String deleteOwner(@PathVariable("id") int id){
         bookDAO.deletePersonId(id);
         return "redirect:/books/{id}";
     }
