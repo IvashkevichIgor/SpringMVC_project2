@@ -11,6 +11,7 @@ import ru.ivashkevich.springProject1.model.Book;
 import ru.ivashkevich.springProject1.model.Person;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/books")
@@ -33,10 +34,17 @@ public class BookController {
     }
 
     @GetMapping("/{id}")
-    public String showBookById(@ModelAttribute("newOwner") Person person, @PathVariable int id, Model model){
+    public String showBookById(@ModelAttribute("person") Person person, @PathVariable int id, Model model){
         model.addAttribute("book", bookDAO.getBookById(id));
-        model.addAttribute("people", personDAO.getAllPeople());
-        model.addAttribute("owner", bookDAO.getBookOwner(id));
+
+        Optional<Person> owner = bookDAO.getBookOwner(id);
+
+        if (owner.isPresent()){
+            model.addAttribute("owner", owner.get());
+        }
+        else {
+            model.addAttribute("people", personDAO.getAllPeople());
+        }
 
         return "books/book";
     }

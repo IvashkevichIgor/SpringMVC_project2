@@ -8,11 +8,11 @@
 
 <p th:text="${book.getTitle()} + ', ' + ${book.getAuthor()} + ', ' + ${book.getPublicationYear()}">VALUE</p>
 
-<div th:unless="${owner}">
+<div th:if="${people}">
     <p>Эта книга свободна. Кому её назначить?</p>
     <form th:method="PATCH" th:action="@{/books/{id}/assign(id=${book.getBookId()})}">
         <label for="owner">Выберите человека: </label>
-        <select th:object="${newOwner}" th:field="*{personId}" id="owner">
+        <select th:object="${person}" th:field="*{personId}" id="owner">
             <option th:each="person : ${people}" th:value="${person.getPersonId()}" th:text="${person.getName()}">name</option>
         </select>
 
