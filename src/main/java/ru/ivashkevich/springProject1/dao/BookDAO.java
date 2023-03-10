@@ -8,6 +8,7 @@ import ru.ivashkevich.springProject1.model.Book;
 import ru.ivashkevich.springProject1.model.Person;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class BookDAO {
@@ -27,9 +28,9 @@ public class BookDAO {
                 .stream().findAny().orElse(null);
     }
 
-    public Person getBookOwner(int id){
+    public Optional<Person> getBookOwner(int id){
         return jdbcTemplate.query("SELECT person_id, name, birth_year FROM person JOIN book USING(person_id) WHERE book_id=?",
-                new BeanPropertyRowMapper<>(Person.class), id).stream().findAny().orElse(null);
+                new BeanPropertyRowMapper<>(Person.class), id).stream().findAny();
     }
 
     public void create(Book book){
