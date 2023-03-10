@@ -3,7 +3,7 @@ package ru.ivashkevich.springProject1.model;
 import javax.validation.constraints.NotEmpty;
 
 public class Book {
-    private int id;
+    private int bookId;
     
     private String title;
     @NotEmpty(message = "Имя автора не должно быть пустым")
@@ -13,18 +13,18 @@ public class Book {
     public Book(){}
 
     public Book(int bookId, String title, String author, int publicationYear) {
-        this.id = bookId;
+        this.bookId = bookId;
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
     }
 
     public int getBookId() {
-        return id;
+        return bookId;
     }
 
     public void setBookId(int bookId) {
-        this.id = bookId;
+        this.bookId = bookId;
     }
 
     public String getTitle() {
@@ -54,7 +54,7 @@ public class Book {
     @Override
     public String toString() {
         return "Book{" +
-                "bookId=" + id +
+                "id=" + bookId +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", publicationYear=" + publicationYear +

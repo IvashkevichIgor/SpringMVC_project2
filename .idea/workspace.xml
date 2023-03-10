@@ -9,10 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54c64cc5-f7ac-485f-b421-88da836e35a5" name="Changes" comment="refactor person/new.html">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/mapper/BookRowMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/book.html" afterDir="false" />
+    <list default="true" id="54c64cc5-f7ac-485f-b421-88da836e35a5" name="Changes" comment="add name validation: name must be unique">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/dao/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/mapper/BookRowMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/springProject1/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/book.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +32,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -46,30 +56,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Java/projects/alishev_project1/src/main/webapp/WEB-INF/views/books",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "8743f6469b527159a0ffa9a3ecb2ccf2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Java/projects/alishev_project1/src/main/webapp/WEB-INF/views/books&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;8743f6469b527159a0ffa9a3ecb2ccf2&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "java.sql.Driver",
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;java.sql.Driver&quot;,
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Java\projects\alishev_project1\src\main\webapp\WEB-INF\views\books" />
       <recent name="C:\Java\projects\alishev_project1\src\main\java\config" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.ivashkevich.springProject1.util" />
     </key>
   </component>
   <component name="RunManager">
@@ -170,7 +183,9 @@
       <option name="presentableId" value="Default" />
       <updated>1677675730805</updated>
       <workItem from="1677675732545" duration="28598000" />
-      <workItem from="1677871749109" duration="804000" />
+      <workItem from="1677871749109" duration="6339000" />
+      <workItem from="1678264384283" duration="17616000" />
+      <workItem from="1678420977080" duration="7135000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1677675981766</created>
@@ -354,7 +369,56 @@
       <option name="project" value="LOCAL" />
       <updated>1677830274800</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="start working on book page (commit to work on desktop)">
+      <created>1678010907130</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1678010907130</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add update functionality for books">
+      <created>1678077020450</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1678077020450</updated>
+    </task>
+    <task id="LOCAL-00029" summary="add set and delete book's owner methods">
+      <created>1678116402077</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1678116402077</updated>
+    </task>
+    <task id="LOCAL-00030" summary="change model, delete fields that contained links to other DB table">
+      <created>1678371033668</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1678371033668</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fix after model classes change">
+      <created>1678374564764</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1678374564764</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add name validation: name must be unique">
+      <created>1678421487015</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1678421487015</updated>
+    </task>
+    <task id="LOCAL-00033" summary="add name validation: name must be unique">
+      <created>1678422589608</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1678422589608</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,10 +436,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="add properties file for database connection" />
-    <MESSAGE value="add model classes" />
-    <MESSAGE value="add SpringMVC configuration classes" />
     <MESSAGE value="add necessary dependencies" />
     <MESSAGE value="add functionality for showing all people from DB" />
     <MESSAGE value="fix Dispatcher servlet config class" />
@@ -395,6 +455,12 @@
     <MESSAGE value="refactor PersonDAO class" />
     <MESSAGE value="add functionality for representing all books from DB" />
     <MESSAGE value="refactor person/new.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor person/new.html" />
+    <MESSAGE value="start working on book page (commit to work on desktop)" />
+    <MESSAGE value="add update functionality for books" />
+    <MESSAGE value="add set and delete book's owner methods" />
+    <MESSAGE value="change model, delete fields that contained links to other DB table" />
+    <MESSAGE value="fix after model classes change" />
+    <MESSAGE value="add name validation: name must be unique" />
+    <option name="LAST_COMMIT_MESSAGE" value="add name validation: name must be unique" />
   </component>
 </project>
