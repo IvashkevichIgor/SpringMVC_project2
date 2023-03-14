@@ -1,12 +1,16 @@
 package ru.ivashkevich.spring_project2.services;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.ivashkevich.spring_project2.models.Book;
 import ru.ivashkevich.spring_project2.models.Person;
 import ru.ivashkevich.spring_project2.repositories.PeopleRepository;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -27,8 +31,18 @@ public class PeopleService {
         return peopleRepository.findById(id).orElse(null);
     }
 
-    public Person getPersonByName(String name){
-        return peopleRepository.findByName(name);
+    public List<Book> getBooksByPersonId(int id){
+        Optional<Person> optional = peopleRepository.findById(id);
+        if (optional.isPresent()){
+            Hibernate.initialize(optional.get().getBooks());
+            return optional.get().getBooks();
+        }
+        else
+            return Collections.emptyList();
+    }
+
+    public boolean hasPersonWithName(String name){
+        return peopleRepository.existsByName(name);
     }
 
     @Transactional
