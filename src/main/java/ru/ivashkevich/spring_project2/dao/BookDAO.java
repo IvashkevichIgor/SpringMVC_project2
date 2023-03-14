@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import ru.ivashkevich.spring_project2.model.Book;
-import ru.ivashkevich.spring_project2.model.Person;
+import ru.ivashkevich.spring_project2.models.Book;
+import ru.ivashkevich.spring_project2.models.Person;
 
 import java.util.List;
 import java.util.Optional;
