@@ -1,32 +1,44 @@
 package ru.ivashkevich.spring_project2.models;
 
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.List;
 
+@Entity
+@Table(name = "person")
 public class Person {
 
-    private int personId;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     @NotEmpty(message = "Имя не должно быть пустым")
     @Size(min = 5, max = 100, message = "Длина ФИО должна быть не менее 5 символов и не более 100")
+    @Column(name = "name")
     private String name;
 
     @Min(value = 1900, message = "Год рождения должен быть больше чем 1900")
+    @Column(name = "birth_year")
     private int birthYear;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Book> books;
+
     public Person(){}
 
-    public Person(int personId, String name, int birthYear) {
-        this.personId = personId;
+    public Person(String name, int birthYear) {
         this.name = name;
         this.birthYear = birthYear;
     }
 
-    public int getPersonId() {
-        return personId;
+    public int getId() {
+        return id;
     }
 
-    public void setPersonId(int personId) {
-        this.personId = personId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -45,10 +57,18 @@ public class Person {
         this.birthYear = birthYear;
     }
 
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
-                "personId=" + personId +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", birthYear=" + birthYear +
                 '}';

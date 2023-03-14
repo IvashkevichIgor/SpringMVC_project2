@@ -1,30 +1,42 @@
 package ru.ivashkevich.spring_project2.models;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+@Entity
+@Table(name = "book")
 public class Book {
-    private int bookId;
-    
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(name = "title")
     private String title;
     @NotEmpty(message = "Имя автора не должно быть пустым")
+    @Column(name = "author")
     private String author;
+    @Column(name = "publication_year")
     private int publicationYear;
+
+    @ManyToOne
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
+    private Person owner;
 
     public Book(){}
 
-    public Book(int bookId, String title, String author, int publicationYear) {
-        this.bookId = bookId;
+    public Book(String title, String author, int publicationYear) {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
     }
 
-    public int getBookId() {
-        return bookId;
+    public int getId() {
+        return id;
     }
 
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -51,13 +63,22 @@ public class Book {
         this.publicationYear = publicationYear;
     }
 
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
-                "id=" + bookId +
+                "id=" + id +
                 ", title='" + title + '\'' +
                 ", author='" + author + '\'' +
                 ", publicationYear=" + publicationYear +
+                ", owner=" + owner +
                 '}';
     }
 }
