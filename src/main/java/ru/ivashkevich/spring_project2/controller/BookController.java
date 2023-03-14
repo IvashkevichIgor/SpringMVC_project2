@@ -1,14 +1,14 @@
-package ru.ivashkevich.springProject1.controller;
+package ru.ivashkevich.spring_project2.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.ivashkevich.springProject1.dao.BookDAO;
-import ru.ivashkevich.springProject1.dao.PersonDAO;
-import ru.ivashkevich.springProject1.model.Book;
-import ru.ivashkevich.springProject1.model.Person;
+import ru.ivashkevich.spring_project2.dao.BookDAO;
+import ru.ivashkevich.spring_project2.dao.PersonDAO;
+import ru.ivashkevich.spring_project2.model.Book;
+import ru.ivashkevich.spring_project2.model.Person;
 
 import javax.validation.Valid;
 import java.util.Optional;

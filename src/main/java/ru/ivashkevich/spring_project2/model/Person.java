@@ -1,4 +1,4 @@
-package ru.ivashkevich.springProject1.model;
+package ru.ivashkevich.spring_project2.model;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;

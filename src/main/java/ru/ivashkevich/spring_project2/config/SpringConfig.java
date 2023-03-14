@@ -1,4 +1,4 @@
-package ru.ivashkevich.springProject1.config;
+package ru.ivashkevich.spring_project2.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 import java.util.Objects;
 
 @Configuration
-@ComponentScan("ru.ivashkevich.springProject1")
+@ComponentScan("ru.ivashkevich.spring_project2")
 @EnableWebMvc
 @PropertySource("classpath:database.properties")
 public class SpringConfig implements WebMvcConfigurer {

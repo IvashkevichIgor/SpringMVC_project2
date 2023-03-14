@@ -1,11 +1,11 @@
-package ru.ivashkevich.springProject1.dao;
+package ru.ivashkevich.spring_project2.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import ru.ivashkevich.springProject1.model.Book;
-import ru.ivashkevich.springProject1.model.Person;
+import ru.ivashkevich.spring_project2.model.Book;
+import ru.ivashkevich.spring_project2.model.Person;
 
 import java.util.List;
 import java.util.Optional;

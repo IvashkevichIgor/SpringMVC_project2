@@ -1,4 +1,4 @@
-package ru.ivashkevich.springProject1.config;
+package ru.ivashkevich.spring_project2.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
