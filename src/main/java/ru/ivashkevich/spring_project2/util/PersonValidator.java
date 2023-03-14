@@ -1,11 +1,11 @@
-package ru.ivashkevich.springProject1.util;
+package ru.ivashkevich.spring_project2.util;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import ru.ivashkevich.springProject1.dao.PersonDAO;
-import ru.ivashkevich.springProject1.model.Person;
+import ru.ivashkevich.spring_project2.dao.PersonDAO;
+import ru.ivashkevich.spring_project2.model.Person;
 
 @Component
 public class PersonValidator implements Validator {
