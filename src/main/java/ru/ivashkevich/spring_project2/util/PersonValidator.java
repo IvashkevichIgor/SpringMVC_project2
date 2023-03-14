@@ -12,12 +12,10 @@ public class PersonValidator implements Validator {
 
     private final PeopleService personService;
 
+    @Autowired
     public PersonValidator(PeopleService personService) {
         this.personService = personService;
     }
-
-    @Autowired
-
 
     @Override
     public boolean supports(Class<?> aClass) {
