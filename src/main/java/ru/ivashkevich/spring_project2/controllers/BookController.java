@@ -70,6 +70,20 @@ public class BookController {
         return "books/new";
     }
 
+    @GetMapping("/{id}/edit")
+    public String edit(Model model, @PathVariable("id") int id){
+        model.addAttribute("book", booksService.getBookById(id));
+        return "books/edit";
+    }
+
+    @GetMapping("/search")
+    public String search(Model model, @RequestParam(value = "starts_with", required = false) String startsWith){
+        if (startsWith != null){
+            model.addAttribute("books", booksService.getBooksWithTitleStartingWith(startsWith));
+        }
+        return "books/search";
+    }
+
     @PostMapping
     public String create(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult){
         if (bindingResult.hasErrors())
@@ -77,12 +91,6 @@ public class BookController {
 
         booksService.create(book);
         return "redirect:/books";
-    }
-
-    @GetMapping("/{id}/edit")
-    public String edit(Model model, @PathVariable("id") int id){
-        model.addAttribute("book", booksService.getBookById(id));
-        return "books/edit";
     }
 
     @PatchMapping("/{id}")

@@ -9,9 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54c64cc5-f7ac-485f-b421-88da836e35a5" name="Changes" comment="full transfer project1 on Spring Data JPA">
+    <list default="true" id="54c64cc5-f7ac-485f-b421-88da836e35a5" name="Changes" comment="add link to books page">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/controllers/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/repositories/BooksRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/repositories/BooksRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/services/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/services/BooksService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/all-books.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/books/all-books.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -184,28 +188,7 @@
       <workItem from="1677871749109" duration="6339000" />
       <workItem from="1678264384283" duration="17616000" />
       <workItem from="1678420977080" duration="7135000" />
-      <workItem from="1678791341713" duration="18951000" />
-    </task>
-    <task id="LOCAL-00001" summary="initial commit">
-      <created>1677675981766</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1677675981766</updated>
-    </task>
-    <task id="LOCAL-00002" summary="initial commit">
-      <created>1677676020875</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1677676020875</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add properties file for database connection">
-      <created>1677679096095</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1677679096095</updated>
+      <workItem from="1678791341713" duration="24592000" />
     </task>
     <task id="LOCAL-00004" summary="add model classes">
       <created>1677679135189</created>
@@ -529,7 +512,28 @@
       <option name="project" value="LOCAL" />
       <updated>1678863823869</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="add pagination and sorting by publication year">
+      <created>1678869908865</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1678869908866</updated>
+    </task>
+    <task id="LOCAL-00051" summary="add link to people page">
+      <created>1678870316154</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1678870316154</updated>
+    </task>
+    <task id="LOCAL-00052" summary="add link to books page">
+      <created>1678870331025</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1678870331025</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,9 +551,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="commit .idea files (not sure for what)" />
-    <MESSAGE value="refactor PersonDAO class" />
-    <MESSAGE value="add functionality for representing all books from DB" />
     <MESSAGE value="refactor person/new.html" />
     <MESSAGE value="start working on book page (commit to work on desktop)" />
     <MESSAGE value="add update functionality for books" />
@@ -572,6 +573,9 @@
     <MESSAGE value="change PersonController, now it works with repository through PeopleService" />
     <MESSAGE value="add standard CRUD methods in service class" />
     <MESSAGE value="full transfer project1 on Spring Data JPA" />
-    <option name="LAST_COMMIT_MESSAGE" value="full transfer project1 on Spring Data JPA" />
+    <MESSAGE value="add pagination and sorting by publication year" />
+    <MESSAGE value="add link to people page" />
+    <MESSAGE value="add link to books page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add link to books page" />
   </component>
 </project>
