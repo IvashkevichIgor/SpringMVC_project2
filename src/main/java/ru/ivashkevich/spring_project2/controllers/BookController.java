@@ -11,6 +11,7 @@ import ru.ivashkevich.spring_project2.services.BooksService;
 import ru.ivashkevich.spring_project2.services.PeopleService;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/books")
@@ -26,8 +27,24 @@ public class BookController {
     }
 
     @GetMapping
-    public String showAllBooks(Model model){
-        model.addAttribute("books", booksService.getAllBooks());
+    public String showAllBooks(Model model,
+                               @RequestParam(required = false) Integer page,
+                               @RequestParam(value = "books_per_page", required = false) Integer booksPerPage,
+                               @RequestParam(value = "sort_by_year", required = false) boolean sortByYear){
+        List<Book> books;
+        if ((page != null) && (booksPerPage != null)) {
+            if (sortByYear)
+                books = booksService.getBooksFromPageNumberSortByPublicationYear(page, booksPerPage);
+            else
+                books = booksService.getBooksFromPageNumber(page, booksPerPage);
+        }
+        else
+            if (sortByYear)
+                books = booksService.getAllBooksSortByPublicationYear();
+            else
+                books = booksService.getAllBooks();
+
+        model.addAttribute("books", books);
 
         return "books/all-books";
     }

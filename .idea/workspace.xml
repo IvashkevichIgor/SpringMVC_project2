@@ -9,12 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54c64cc5-f7ac-485f-b421-88da836e35a5" name="Changes" comment="add standard CRUD methods in service class">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="54c64cc5-f7ac-485f-b421-88da836e35a5" name="Changes" comment="full transfer project1 on Spring Data JPA">
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/controllers/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/dao/BookDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/services/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/services/BooksService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +184,7 @@
       <workItem from="1677871749109" duration="6339000" />
       <workItem from="1678264384283" duration="17616000" />
       <workItem from="1678420977080" duration="7135000" />
-      <workItem from="1678791341713" duration="14131000" />
+      <workItem from="1678791341713" duration="18951000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1677675981766</created>
@@ -526,7 +522,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678854683010</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="full transfer project1 on Spring Data JPA">
+      <created>1678863823869</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1678863823869</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +547,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="edit person view, add display of list books currently holding by person" />
     <MESSAGE value="commit .idea files (not sure for what)" />
     <MESSAGE value="refactor PersonDAO class" />
     <MESSAGE value="add functionality for representing all books from DB" />
@@ -569,6 +571,7 @@
     <MESSAGE value="fix validate method" />
     <MESSAGE value="change PersonController, now it works with repository through PeopleService" />
     <MESSAGE value="add standard CRUD methods in service class" />
-    <option name="LAST_COMMIT_MESSAGE" value="add standard CRUD methods in service class" />
+    <MESSAGE value="full transfer project1 on Spring Data JPA" />
+    <option name="LAST_COMMIT_MESSAGE" value="full transfer project1 on Spring Data JPA" />
   </component>
 </project>

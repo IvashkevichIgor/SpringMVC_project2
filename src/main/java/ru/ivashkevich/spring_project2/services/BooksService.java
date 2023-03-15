@@ -1,6 +1,8 @@
 package ru.ivashkevich.spring_project2.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.ivashkevich.spring_project2.models.Book;
@@ -22,6 +24,18 @@ public class BooksService {
 
     public List<Book> getAllBooks(){
         return booksRepository.findAll();
+    }
+
+    public List<Book> getBooksFromPageNumber(int page, int booksPerPage){
+        return booksRepository.findAll(PageRequest.of(page, booksPerPage)).getContent();
+    }
+
+    public List<Book> getAllBooksSortByPublicationYear(){
+        return booksRepository.findAll(Sort.by("publicationYear"));
+    }
+
+    public List<Book> getBooksFromPageNumberSortByPublicationYear(int page, int booksPerPage){
+        return booksRepository.findAll(PageRequest.of(page, booksPerPage, Sort.by("publicationYear"))).getContent();
     }
 
     public Book getBookById(int id){
