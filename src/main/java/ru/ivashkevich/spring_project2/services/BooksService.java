@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.ivashkevich.spring_project2.models.Book;
+import ru.ivashkevich.spring_project2.models.Person;
 import ru.ivashkevich.spring_project2.repositories.BooksRepository;
 
 import java.util.List;
@@ -41,5 +42,15 @@ public class BooksService {
     @Transactional
     public void delete(int id){
         booksRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void assignOwner(int bookId, Person person){
+        booksRepository.findById(bookId).ifPresent(book -> book.setOwner(person));
+    }
+
+    @Transactional
+    public void releaseBookFromOwner(int id){
+        booksRepository.findById(id).ifPresent(book -> book.setOwner(null));
     }
 }

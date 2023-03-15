@@ -9,7 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54c64cc5-f7ac-485f-b421-88da836e35a5" name="Changes" comment="" />
+    <list default="true" id="54c64cc5-f7ac-485f-b421-88da836e35a5" name="Changes" comment="add standard CRUD methods in service class">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/controllers/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/controllers/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/dao/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/services/BooksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ivashkevich/spring_project2/services/BooksService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +38,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -178,6 +188,7 @@
       <workItem from="1677871749109" duration="6339000" />
       <workItem from="1678264384283" duration="17616000" />
       <workItem from="1678420977080" duration="7135000" />
+      <workItem from="1678791341713" duration="14131000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1677675981766</created>
@@ -410,7 +421,112 @@
       <option name="project" value="LOCAL" />
       <updated>1678422589608</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="add name validation: name must be unique">
+      <created>1678794767723</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1678794767723</updated>
+    </task>
+    <task id="LOCAL-00035" summary="initial commit for second project">
+      <created>1678794898301</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1678794898301</updated>
+    </task>
+    <task id="LOCAL-00036" summary="change properties for DB connection">
+      <created>1678795109059</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1678795109059</updated>
+    </task>
+    <task id="LOCAL-00037" summary="package name refactoring">
+      <created>1678795396890</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1678795396890</updated>
+    </task>
+    <task id="LOCAL-00038" summary="change config file to work with Hibernate">
+      <created>1678795427255</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1678795427255</updated>
+    </task>
+    <task id="LOCAL-00039" summary="change name of personId and bookId fields to id">
+      <created>1678796813830</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1678796813830</updated>
+    </task>
+    <task id="LOCAL-00040" summary="change model classes into entities">
+      <created>1678796852122</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1678796852122</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add repository interfaces">
+      <created>1678797439746</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1678797439746</updated>
+    </task>
+    <task id="LOCAL-00042" summary="change PersonDAO field into PeopleService">
+      <created>1678798472493</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1678798472493</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add PeopleService">
+      <created>1678799010634</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1678799010634</updated>
+    </task>
+    <task id="LOCAL-00044" summary="small fixes">
+      <created>1678799928136</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1678799928136</updated>
+    </task>
+    <task id="LOCAL-00045" summary="add boolean method for PersonValidator">
+      <created>1678806035193</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1678806035193</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fix validate method">
+      <created>1678806089237</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1678806089237</updated>
+    </task>
+    <task id="LOCAL-00047" summary="change PersonController, now it works with repository through PeopleService">
+      <created>1678807553123</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1678807553123</updated>
+    </task>
+    <task id="LOCAL-00048" summary="add standard CRUD methods in service class">
+      <created>1678854683010</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1678854683010</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,20 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add necessary dependencies" />
-    <MESSAGE value="add functionality for showing all people from DB" />
-    <MESSAGE value="fix Dispatcher servlet config class" />
-    <MESSAGE value="fix validation annotation on birthYear field" />
-    <MESSAGE value="add functionality for adding new person" />
-    <MESSAGE value="add edit and delete method" />
-    <MESSAGE value="refactor update method" />
-    <MESSAGE value="add patch and delete mapping" />
-    <MESSAGE value="fix sql queries in methods" />
-    <MESSAGE value="refactor name of id field" />
-    <MESSAGE value="fix getPersonById method" />
-    <MESSAGE value="change link into button on &quot;add new person&quot; ref" />
-    <MESSAGE value="add GetMapping for edit page" />
-    <MESSAGE value="add edit and person views" />
     <MESSAGE value="edit person view, add display of list books currently holding by person" />
     <MESSAGE value="commit .idea files (not sure for what)" />
     <MESSAGE value="refactor PersonDAO class" />
@@ -453,6 +555,20 @@
     <MESSAGE value="change model, delete fields that contained links to other DB table" />
     <MESSAGE value="fix after model classes change" />
     <MESSAGE value="add name validation: name must be unique" />
-    <option name="LAST_COMMIT_MESSAGE" value="add name validation: name must be unique" />
+    <MESSAGE value="initial commit for second project" />
+    <MESSAGE value="change properties for DB connection" />
+    <MESSAGE value="package name refactoring" />
+    <MESSAGE value="change config file to work with Hibernate" />
+    <MESSAGE value="change name of personId and bookId fields to id" />
+    <MESSAGE value="change model classes into entities" />
+    <MESSAGE value="add repository interfaces" />
+    <MESSAGE value="change PersonDAO field into PeopleService" />
+    <MESSAGE value="add PeopleService" />
+    <MESSAGE value="small fixes" />
+    <MESSAGE value="add boolean method for PersonValidator" />
+    <MESSAGE value="fix validate method" />
+    <MESSAGE value="change PersonController, now it works with repository through PeopleService" />
+    <MESSAGE value="add standard CRUD methods in service class" />
+    <option name="LAST_COMMIT_MESSAGE" value="add standard CRUD methods in service class" />
   </component>
 </project>
