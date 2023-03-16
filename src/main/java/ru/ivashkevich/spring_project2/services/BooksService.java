@@ -9,7 +9,9 @@ import ru.ivashkevich.spring_project2.models.Book;
 import ru.ivashkevich.spring_project2.models.Person;
 import ru.ivashkevich.spring_project2.repositories.BooksRepository;
 
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
@@ -64,11 +66,21 @@ public class BooksService {
 
     @Transactional
     public void assignOwner(int bookId, Person person){
-        booksRepository.findById(bookId).ifPresent(book -> book.setOwner(person));
+        Optional<Book> optionalBook = booksRepository.findById(bookId);
+        if (optionalBook.isPresent()){
+            Book book = optionalBook.get();
+            book.setTakenAt(new Date());
+            book.setOwner(person);
+        }
     }
 
     @Transactional
     public void releaseBookFromOwner(int id){
-        booksRepository.findById(id).ifPresent(book -> book.setOwner(null));
+        Optional<Book> optionalBook = booksRepository.findById(id);
+        if (optionalBook.isPresent()){
+            Book book = optionalBook.get();
+            book.setTakenAt(null);
+            book.setOwner(null);
+        }
     }
 }
