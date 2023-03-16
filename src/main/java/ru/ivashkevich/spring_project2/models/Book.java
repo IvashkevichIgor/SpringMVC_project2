@@ -2,6 +2,7 @@ package ru.ivashkevich.spring_project2.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -82,6 +83,16 @@ public class Book {
 
     public void setTakenAt(Date takenAt) {
         this.takenAt = takenAt;
+    }
+
+    public boolean isOverdue() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR, 23);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.SECOND, 59);
+        calendar.add(Calendar.DAY_OF_MONTH, -10);
+        Date tenDaysAgoDate = calendar.getTime();
+        return takenAt.before(tenDaysAgoDate);
     }
 
     @Override
